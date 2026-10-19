@@ -24,11 +24,12 @@ jobs:
 
       - name: 4. Run Postman Tests
         run: |
-          newman run RestfulBooker.postman_collection.json \
-            -e RestfulBooker.postman_environment.json \
+          newman run RestfulBooker_API_Collection.postman_collection.json \
+            -e RestfulBooker_Env.postman_environment.json \
             -d booking_data.csv \
             --reporters cli,junit \
             --reporter-junit-export results.xml
+
 
       - name: 5. Upload test results
         if: always()
